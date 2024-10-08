@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapView mapView;
     private GoogleMap googleMap;
 
-    private static final LatLng LA_SERENA = new LatLng(-29.9027, -71.2519);
-
     private HashMap<LatLng, Marker> markers = new HashMap<>();
 
     @Override
@@ -40,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap map) {
         googleMap = map;
-
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LA_SERENA, 13));
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
